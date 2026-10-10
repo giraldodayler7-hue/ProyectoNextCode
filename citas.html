@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos/styles.css">
+    <title>NexCode | Barbería profesional</title>
+</head>
+
+<body data-app-page="appointments">
+    <nav class="navbar navbar-dark navbar-expand-lg barra-barber bg-dark">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand logo" href="#">NexCodeBarber</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir navegacion">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+
+         
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownCitas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Citas
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownCitas">
+                            <li><a class="dropdown-item" href="citas.html">Registrar Cita</a></li>
+                            <li><a class="dropdown-item" href="#">Listar / Buscar Citas</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Modificar Cita</a></li>
+                            <li><a class="dropdown-item" href="#">Cancelar / Eliminar Cita</a></li>
+                        </ul>
+                    </li>
+
+                   
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownServicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownServicios">
+                            <li><a class="dropdown-item" href="servicios.html">Catálogo de Servicios</a></li>
+                            <li><a class="dropdown-item" href="#">Registrar Servicio</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Modificar / Eliminar</a></li>
+                        </ul>
+                    </li>
+
+             
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownPersonal" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Personal & Clientes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownPersonal">
+                            <li><a class="dropdown-item" href="barberos.html">Gestión de Barberos</a></li>
+                            <li><a class="dropdown-item" href="#">Gestión de Clientes</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Horarios de Atención</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownAdmin" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Administración
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownAdmin">
+                            <li><a class="dropdown-item" href="estadisticas.html">Estadísticas</a></li>
+                            <li><a class="dropdown-item" href="#">Gestión de Pagos</a></li>
+                            <li><a class="dropdown-item" href="#">Generar Reportes (PDF/CSV)</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Control de Usuarios</a></li>
+                            <li><a class="dropdown-item" href="#">Notificaciones</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex buscador me-lg-3 my-3 my-lg-0" role="search">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Buscar en sistema..." aria-label="Buscar">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </div>
+                </form>
+                
+
+                <div class="usuarios d-flex gap-2">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownSignup" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sign-up
+                        </button>
+                        <form class="dropdown-menu dropdown-menu-end p-4 shadow" style="width: 280px;" aria-labelledby="dropdownSignup">
+                            <h5 class="mb-3">Registro</h5>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="tu@email.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Contraseña">
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100">Registrarse</button>
+                        </form>
+                    </div>
+
+                    
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownLogin" data-bs-toggle="dropdown" aria-expanded="false">
+                            Login
+                        </button>
+                        <form class="dropdown-menu dropdown-menu-end p-4 shadow" style="width: 280px;" aria-labelledby="dropdownLogin">
+                            <h5 class="mb-3">Iniciar Sesión</h5>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="loginEmail" placeholder="tu@email.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña">
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+   
+    <main class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-light fw-bold">Gestión de Citas (RF-CI)</h2>
+            <button class="btn btn-warning fw-bold text-dark" data-bs-toggle="modal" data-bs-target="#modalRegistrarCita">
+                + Registrar Nueva Cita
+            </button>
+        </div>
+
+        <div class="table-responsive bg-dark p-3 rounded shadow border border-warning border-opacity-25">
+            <table id="tablaCitas" class="table table-dark table-striped align-middle mb-0">
+                <thead>
+                    <tr class="text-warning">
+                        <th>Cliente</th>
+                        <th>Servicio</th>
+                        <th>Barbero</th>
+                        <th>Fecha y Hora</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Carlos Pérez</td>
+                        <td>Corte Clásico</td>
+                        <td>John</td>
+                        <td>2026-10-12 / 10:00 AM</td>
+                        <td class="text-center">
+                            <div class="acciones-tabla">
+                                <button type="button" class="btn btn-info btn-sm text-dark fw-bold px-2 py-1" data-bs-toggle="modal" data-bs-target="#modalDetalleCita">Ver</button>
+                                <button type="button" class="btn btn-warning btn-sm text-dark fw-bold px-2 py-1" data-bs-toggle="modal" data-bs-target="#modalEditarCita">Modificar</button>
+                                <button type="button" class="btn btn-secondary btn-sm text-dark fw-bold px-2 py-1" data-bs-toggle="modal" data-bs-target="#modalCancelarCita">Cancelar</button>
+                                <button type="button" class="btn btn-danger btn-sm px-2 py-1" data-bs-toggle="modal" data-bs-target="#modalEliminarCita">Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Andrés Gómez</td>
+                        <td>Combo (Corte + Barba)</td>
+                        <td>July</td>
+                        <td>2026-10-12 / 11:30 AM</td>
+                        <td class="text-center">
+                            <div class="acciones-tabla">
+                                <button type="button" class="btn btn-info btn-sm text-dark fw-bold px-2 py-1" data-bs-toggle="modal" data-bs-target="#modalDetalleCita">Ver</button>
+                                <button type="button" class="btn btn-warning btn-sm text-dark fw-bold px-2 py-1" data-bs-toggle="modal" data-bs-target="#modalEditarCita">Modificar</button>
+                                <button type="button" class="btn btn-secondary btn-sm text-dark fw-bold px-2 py-1" disabled>Cancelar</button>
+                                <button type="button" class="btn btn-danger btn-sm px-2 py-1" data-bs-toggle="modal" data-bs-target="#modalEliminarCita">Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+  
+  
+    <div class="modal fade" id="modalRegistrarCita" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light border border-warning">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-warning">Registrar Nueva Cita</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Nombre del Cliente</label>
+                            <input type="text" class="form-control bg-secondary text-light border-0" placeholder="Ej. Roberto Sánchez" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Servicio</label>
+                            <select class="form-control bg-secondary text-light border-0">
+                                <option>Corte Clásico</option>
+                                <option>Arreglo de Barba</option>
+                                <option>Combo NexCode (Corte + Barba)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Barbero Asignado</label>
+                            <select class="form-control bg-secondary text-light border-0">
+                                <option>John</option>
+                                <option>July</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Fecha y Hora</label>
+                            <input type="datetime-local" class="form-control bg-secondary text-light border-0" required>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100 fw-bold text-dark" data-bs-dismiss="modal">Confirmar Cita</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="modal fade" id="modalDetalleCita" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light border border-warning">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-warning">Detalles de la Cita</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Cliente:</strong> Carlos Pérez</p>
+                    <p><strong>Servicio:</strong> Corte Clásico</p>
+                    <p><strong>Barbero:</strong> John</p>
+                    <p><strong>Fecha y Hora:</strong> 2026-10-12 10:00 AM</p>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="modal fade" id="modalEditarCita" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light border border-warning">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-warning">Modificar Cita</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Servicio</label>
+                            <select class="form-control bg-secondary text-light border-0">
+                                <option selected>Corte Clásico</option>
+                                <option>Arreglo de Barba</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Nueva Fecha y Hora</label>
+                            <input type="datetime-local" class="form-control bg-secondary text-light border-0">
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100 fw-bold text-dark" data-bs-dismiss="modal">Actualizar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="modal fade" id="modalCancelarCita" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light border border-warning">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-warning">Cancelar Cita</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas cambiar el estado de esta cita a <strong>Cancelada</strong>?</p>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                    <button type="button" class="btn btn-warning text-dark fw-bold" data-bs-dismiss="modal">Sí, cancelar cita</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="modal fade" id="modalEliminarCita" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light border border-danger">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Eliminar Registro de Cita</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar permanentemente este registro de la base de datos?</p>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Sí, eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+
+    
+</body>
+
+</html>

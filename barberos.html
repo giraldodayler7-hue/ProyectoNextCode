@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos/styles.css">
+    <title>NexCode | Gestión de Barberos</title>
+   
+</head>
+
+<body data-app-page="barbers">
+    <nav class="navbar navbar-dark navbar-expand-lg barra-barber bg-dark">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand logo" href="#">NexCodeBarber</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir navegacion">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownCitas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Citas
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownCitas">
+                            <li><a class="dropdown-item" href="citas.html">Registrar Cita</a></li>
+                            <li><a class="dropdown-item" href="citas.html">Listar / Buscar Citas</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="citas.html">Modificar Cita</a></li>
+                            <li><a class="dropdown-item" href="citas.html">Cancelar / Eliminar Cita</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownServicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownServicios">
+                            <li><a class="dropdown-item" href="servicios.html">Catálogo de Servicios</a></li>
+                            <li><a class="dropdown-item" href="servicios.html">Registrar Servicio</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="servicios.html">Modificar / Eliminar</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="dropdownPersonal" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Personal & Clientes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownPersonal">
+                            <li><a class="dropdown-item" href="barberos.html">Gestión de Barberos</a></li>
+                            <li><a class="dropdown-item" href="#">Gestión de Clientes</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Horarios de Atención</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownAdmin" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Administración
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownAdmin">
+                            <li><a class="dropdown-item" href="estadisticas.html">Estadísticas</a></li>
+                            <li><a class="dropdown-item" href="#">Gestión de Pagos</a></li>
+                            <li><a class="dropdown-item" href="#">Generar Reportes (PDF/CSV)</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Control de Usuarios</a></li>
+                            <li><a class="dropdown-item" href="#">Notificaciones</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex buscador me-lg-3 my-3 my-lg-0" role="search">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Buscar en sistema..." aria-label="Buscar">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </div>
+                </form>
+
+                <div class="usuarios d-flex gap-2">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownSignup" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sign-up
+                        </button>
+                        <form class="dropdown-menu dropdown-menu-end p-4 shadow" style="width: 280px;" aria-labelledby="dropdownSignup">
+                            <h5 class="mb-3">Registro</h5>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="tu@email.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Contraseña">
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100">Registrarse</button>
+                        </form>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownLogin" data-bs-toggle="dropdown" aria-expanded="false">
+                            Login
+                        </button>
+                        <form class="dropdown-menu dropdown-menu-end p-4 shadow" style="width: 280px;" aria-labelledby="dropdownLogin">
+                            <h5 class="mb-3">Iniciar Sesión</h5>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="loginEmail" placeholder="tu@email.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña">
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+ 
+    <main class="container py-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-5 gap-3">
+            <div>
+                <h2 class="text-light fw-bold">Directorio de Maestros Barberos (RF-BA)</h2>
+                <p class="text-secondary mb-0">Control de perfiles profesionales, especialidades, tarifas y credenciales de acceso[cite: 6].</p>
+            </div>
+            <button class="btn btn-warning fw-bold text-dark px-4 py-2 shadow" data-bs-toggle="modal" data-bs-target="#modalRegistrarBarbero">
+                + Registrar Nuevo Barbero
+            </button>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card-vip-barbero p-4 text-light h-100 d-flex flex-column justify-content-between shadow">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="imagen/brahian.png" class="rounded-circle avatar-barbero" alt="John Doe">
+                            <div>
+                                <h4 class="text-warning fw-bold mb-1">bahian david</h4>
+                                <span class="badge bg-success">Disponible</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <span class="badge-especialidad d-inline-block mb-1">Cortes Clásicos & Fade</span>
+                        </div>
+                        <p class="text-secondary small mb-2"><strong>Tarifa Base:</strong> <span class="text-warning">$30.000</span></p>
+                        <p class="text-secondary small mb-3"><strong>Horario:</strong> Lun - Sáb: 9:00 AM - 6:00 PM</p>
+                    </div>
+                    <div class="d-flex justify-content-between gap-2 pt-3 border-top border-secondary">
+                        <button class="btn btn-info btn-sm text-dark fw-bold w-100" data-bs-toggle="modal" data-bs-target="#modalDetalleBarbero">Ver Perfil</button>
+                        <button class="btn btn-warning btn-sm text-dark fw-bold w-100" data-bs-toggle="modal" data-bs-target="#modalEditarBarbero">Modificar</button>
+                        <button class="btn btn-danger btn-sm w-100" data-bs-toggle="modal" data-bs-target="#modalEliminarBarbero">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta Perfil 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card-vip-barbero p-4 text-light h-100 d-flex flex-column justify-content-between shadow">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="imagen/simonlosano.png" class="rounded-circle avatar-barbero" alt="July Dooley">
+                            <div>
+                                <h4 class="text-warning fw-bold mb-1">Simon losano</h4>
+                                <span class="badge bg-success">Disponible</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <span class="badge-especialidad d-inline-block mb-1">Barba & Toalla Caliente</span>
+                        </div>
+                        <p class="text-secondary small mb-2"><strong>Tarifa Base:</strong> <span class="text-warning">$25.000</span></p>
+                        <p class="text-secondary small mb-3"><strong>Horario:</strong> Mar - Dom: 10:00 AM - 7:00 PM</p>
+                    </div>
+                    <div class="d-flex justify-content-between gap-2 pt-3 border-top border-secondary">
+                        <button class="btn btn-info btn-sm text-dark fw-bold w-100" data-bs-toggle="modal" data-bs-target="#modalDetalleBarbero">Ver Perfil</button>
+                        <button class="btn btn-warning btn-sm text-dark fw-bold w-100" data-bs-toggle="modal" data-bs-target="#modalEditarBarbero">Modificar</button>
+                        <button class="btn btn-danger btn-sm w-100" data-bs-toggle="modal" data-bs-target="#modalEliminarBarbero">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta Perfil 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card-vip-barbero p-4 text-light h-100 d-flex flex-column justify-content-between shadow">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="imagen/daylergiraldo.png" class="rounded-circle avatar-barbero" alt="Carlos Mendoza">
+                            <div>
+                                <h4 class="text-warning fw-bold mb-1">Dayler giraldo</h4>
+                                <span class="badge bg-secondary">En Pausa</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <span class="badge-especialidad d-inline-block mb-1">Cortes Modernos & Barber Art</span>
+                        </div>
+                        <p class="text-secondary small mb-2"><strong>Tarifa Base:</strong> <span class="text-warning">$35.000</span></p>
+                        <p class="text-secondary small mb-3"><strong>Horario:</strong> Mié - Lun: 8:00 AM - 5:00 PM</p>
+                    </div>
+                    <div class="d-flex justify-content-between gap-2 pt-3 border-top border-secondary">
+                        <button class="btn btn-info btn-sm text-dark fw-bold w-100" data-bs-toggle="modal" data-bs-target="#modalDetalleBarbero">Ver Perfil</button>
+                        <button class="btn btn-warning btn-sm text-dark fw-bold w-100" data-bs-toggle="modal" data-bs-target="#modalEditarBarbero">Modificar</button>
+                        <button class="btn btn-danger btn-sm w-100" data-bs-toggle="modal" data-bs-target="#modalEliminarBarbero">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+
+                 <div class="col-lg-4 col-md-6">
+                <div class="card-vip-barbero p-4 text-light h-100 d-flex flex-column justify-content-between shadow">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="imagen/villegas.png" class="rounded-circle avatar-barbero" alt="Carlos Mendoza">
+                            <div>
+                                <h4 class="text-warning fw-bold mb-1">Simon villegas</h4>
+                                <span class="badge bg-secondary">En Pausa</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <span class="badge-especialidad d-inline-block mb-1">Cortes Modernos & Barber Art</span>
+                        </div>
+                        <p class="text-secondary small mb-2"><strong>Tarifa Base:</strong> <span class="text-warning">$35.000</span></p>
+                        <p class="text-secondary small mb-3"><strong>Horario:</strong> Mié - Lun: 8:00 AM - 5:00 PM</p>
+                    </div>
+                    <div class="d-flex justify-content-between gap-2 pt-3 border-top border-secondary">
+                        <button class="btn btn-info btn-sm text-dark fw-bold w-100" data-bs-toggle="modal" data-bs-target="#modalDetalleBarbero">Ver Perfil</button>
+                        <button class="btn btn-warning btn-sm text-dark fw-bold w-100" data-bs-toggle="modal" data-bs-target="#modalEditarBarbero">Modificar</button>
+                        <button class="btn btn-danger btn-sm w-100" data-bs-toggle="modal" data-bs-target="#modalEliminarBarbero">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <!-- ================= MODALES DE BARBEROS ================= -->
+
+    <!-- Modal Registrar Barbero (RF-BA 01) -->
+    <div class="modal fade" id="modalRegistrarBarbero" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light border border-warning">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-warning">Registrar Nuevo Barbero</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Nombres Completos</label>
+                            <input type="text" class="form-control bg-secondary text-light border-0" placeholder="Ej. Roberto Gómez" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Especialidades</label>
+                            <input type="text" class="form-control bg-secondary text-light border-0" placeholder="Ej. Cortes modernos, Fade" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Tarifa Base ($)</label>
+                            <input type="text" class="form-control bg-secondary text-light border-0" placeholder="Ej. $30.000" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Horario de Atención</label>
+                            <input type="text" class="form-control bg-secondary text-light border-0" placeholder="Ej. Lunes a Sábado 8am - 5pm" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Contraseña de Acceso</label>
+                            <input type="password" class="form-control bg-secondary text-light border-0" placeholder="********" required>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100 fw-bold text-dark" data-bs-dismiss="modal">Guardar Perfil</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Ver Detalle Barbero (RF-BA 02) -->
+    <div class="modal fade" id="modalDetalleBarbero" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light border border-warning">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-warning">Perfil Profesional</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="imagen/nexCode.webp" class="rounded-circle avatar-barbero mb-3" alt="Avatar">
+                    <h4 class="text-warning">John Doe</h4>
+                    <p class="text-secondary mb-1"><strong>Especialidades:</strong> Cortes Clásicos & Fade[cite: 6]</p>
+                    <p class="text-secondary mb-1"><strong>Tarifa Base:</strong> $30.000[cite: 6]</p>
+                    <p class="text-secondary mb-0"><strong>Horario:</strong> Lun - Sáb: 9:00 AM - 6:00 PM[cite: 6]</p>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Modificar Barbero y Contraseña (RF-BA 03) -->
+    <div class="modal fade" id="modalEditarBarbero" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light border border-warning">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-warning">Modificar Información y Credenciales</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Nombres</label>
+                            <input type="text" class="form-control bg-secondary text-light border-0" value="John Doe">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Especialidades</label>
+                            <input type="text" class="form-control bg-secondary text-light border-0" value="Cortes Clásicos & Fade">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Tarifa Base</label>
+                            <input type="text" class="form-control bg-secondary text-light border-0" value="$30.000">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Horario</label>
+                            <input type="text" class="form-control bg-secondary text-light border-0" value="Lun - Sáb: 9:00 AM - 6:00 PM">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Cambiar Contraseña</label>
+                            <input type="password" class="form-control bg-secondary text-light border-0" placeholder="Nueva contraseña de acceso[cite: 6]">
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100 fw-bold text-dark" data-bs-dismiss="modal">Actualizar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Eliminar Barbero (RF-BA 04) -->
+    <div class="modal fade" id="modalEliminarBarbero" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light border border-danger">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Eliminar Registro de Barbero</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar el registro y perfil de este barbero permanentemente[cite: 6]?</p>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Sí, eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
